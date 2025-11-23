@@ -1,0 +1,79 @@
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+polling_url: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.cbc.ca%2Fwebfeed%2Frss%2F{{cbc_feed}}&api_key=x6esifysbvvwbgdp8gkgl4qjkusymotbra8drsny\r\nhttps://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fici.radio-canada.ca%2Frss%2F{{rc_feed}}&api_key=x6esifysbvvwbgdp8gkgl4qjkusymotbra8drsny"
+polling_headers: ''
+polling_body: ''
+id: 41830
+custom_fields:
+- keyname: doesnt_matter
+  name: About This Plugin
+  field_type: author_bio
+  description: The latest headlines from the CBC / Les dernières nouvelles de Radio-Canada
+  learn_more_url: https://www.cbc.ca
+  email_address: turner.vink@gmail.com
+- keyname: source
+  field_type: select
+  options:
+  - CBC: cbc
+  - Radio-Canada: rc
+  default: cbc
+  name: Source / Source
+  description: Select your source for news / Choisissez votre source d'information
+- keyname: cbc_feed
+  field_type: select
+  options:
+  - Top Stories: rss-topstories
+  - World: rss-world
+  - Canada: rss-canada
+  - Politics: rss-politics
+  - Health: rss-health
+  - Technology: rss-technology
+  - Money: rss-money
+  - Consumer: rss-consumer
+  - Sports: rss-sports
+  - British Columbia: rss-canada-britishcolumbia
+  default: topstories
+  name: Feed for CBC
+  description: The feed to use when CBC is selected as the source
+- keyname: rc_feed
+  field_type: select
+  options:
+  - Grands titres: '4159'
+  - International: '96'
+  - Politique: '4175'
+  - Santé: '4171'
+  - Techo: '4169'
+  - Économie: '5717'
+  - Sports: '771'
+  - Québec: '6104'
+  default: '4159'
+  name: Fil d'actualité de Radio-Canada
+  description: Le flux à utiliser lorsque Radio-Canada est sélectionné
+- keyname: show_summaries
+  field_type: select
+  options:
+  - Yes / Oui: 'true'
+  - No / Non: 'false'
+  default: 'true'
+  name: Show story summaries / Afficher les résumés des articles
+- keyname: show_qr_codes
+  field_type: select
+  options:
+  - Yes / Oui: 'true'
+  - No / Non: 'false'
+  default: 'false'
+  name: Show QR codes to open articles (full view only) / Afficher les codes QR pour ouvrir les articles (vue complète seulement)
+- keyname: time_format
+  field_type: select
+  options:
+  - 24h
+  - 12h
+  default: 12h
+  name: Time format / Format de l'heure
+  description: Applies to CBC source only / S'applique uniquement à la source CBC
+name: CBC News / Nouvelles de Radio-Canada
+refresh_interval: 60
